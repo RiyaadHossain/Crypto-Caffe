@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer'
 import Homepage from './components/Homepage/Homepage'
 import CoinDetails from './components/CoinDetails/CoinDetails'
 import NotFound from './components/NotFound/NotFound'
+import BdAddress from './components/Contact/BdAddress'
+import UsAddress from './components/Contact/UsAddress'
 
 const App = () => {
   return (
@@ -17,7 +19,10 @@ const App = () => {
         <Route path='/' element={<Homepage/> }/>
         <Route path='/coins' element={<Coins/> }/>
         <Route path='/coin-details/:id' element={<CoinDetails />}/>
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Contact />}>
+          <Route path='bdaddress' element={ <BdAddress/>}/>
+          <Route path='usaddress' element={ <UsAddress/>}/>
+        </Route>
         <Route path='/about' element={<About/> }/>
         <Route path='*' element={<NotFound/> }/>
       </Routes>
